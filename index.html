@@ -3,42 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intercom Widget</title>
+  <title>Wolt Support Chat</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background: #0078d7;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.5em;
+    }
+
+    /* Chat Box Container */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #chat-container {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    #chat-box {
+      flex: 1;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    #chat-input {
+      display: flex;
+    }
+
+    #chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    #chat-input button {
+      background: #0078d7;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin-left: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #chat-input button:hover {
+      background: #005bb5;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #f8f9fa;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    Wolt Support Chat
+  </header>
+
+  <!-- Main Chat Section -->
+  <main>
+    <div id="chat-container">
+      <div id="chat-box">
+        <!-- Chat messages will appear here -->
+      </div>
+      <div id="chat-input">
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2024 Wolt Support. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
   <script>
-    window.intercomSettings = {
-      app_id: "crzccsbi"
-    };
-  </script>
-  <script>
-    (function(){
-      var w=window;
-      var ic=w.Intercom;
-      if(typeof ic==="function"){
-        ic('reattach_activator');
-        ic('update',intercomSettings);
-      } else {
-        var d=document;
-        var i=function(){i.c(arguments)};
-        i.q=[];
-        i.c=function(args){i.q.push(args)};
-        w.Intercom=i;
-        function l(){
-          var s=d.createElement('script');
-          s.type='text/javascript';
-          s.async=true;
-          s.src='https://widget.intercom.io/widget/your_app_id';
-          var x=d.getElementsByTagName('script')[0];
-          x.parentNode.insertBefore(s,x);
-        }
-        if(document.readyState==='complete'){l();}
-        else {
-          if(w.attachEvent){w.attachEvent('onload',l);}
-          else {w.addEventListener('load',l,false);}
-        }
+    // JavaScript to handle chat functionality
+    const chatBox = document.getElementById('chat-box');
+    const messageInput = document.getElementById('message-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    // Simulate sending and displaying messages
+    sendBtn.addEventListener('click', () => {
+      const message = messageInput.value.trim();
+      if (message) {
+        // Add user's message
+        const userMessage = document.createElement('div');
+        userMessage.style.margin = '10px 0';
+        userMessage.style.padding = '10px';
+        userMessage.style.background = '#0078d7';
+        userMessage.style.color = 'white';
+        userMessage.style.borderRadius = '8px';
+        userMessage.style.textAlign = 'right';
+        userMessage.textContent = message;
+        chatBox.appendChild(userMessage);
+
+        // Clear input field
+        messageInput.value = '';
+
+        // Simulate a support response
+        setTimeout(() => {
+          const supportMessage = document.createElement('div');
+          supportMessage.style.margin = '10px 0';
+          supportMessage.style.padding = '10px';
+          supportMessage.style.background = '#f1f1f1';
+          supportMessage.style.color = '#333';
+          supportMessage.style.borderRadius = '8px';
+          supportMessage.style.textAlign = 'left';
+          supportMessage.textContent = 'Thank you for reaching out! How can we assist you?';
+          chatBox.appendChild(supportMessage);
+
+          // Scroll to the latest message
+          chatBox.scrollTop = chatBox.scrollHeight;
+        }, 1000);
       }
-    })()
+    });
   </script>
 </body>
 </html>
