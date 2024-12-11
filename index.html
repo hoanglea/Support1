@@ -77,10 +77,17 @@
       text-align: center;
       color: #aaa;
       border: 2px dashed #ddd;
+      position: relative;
+      overflow: hidden;
     }
 
-    #chat-placeholder span {
-      color: #888;
+    iframe.intercom-messenger-frame,
+    iframe.intercom-launcher-frame {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
     }
 
     /* Footer */
@@ -101,18 +108,6 @@
     }
   </style>
 </head>
-<script>
-  window.intercomSettings = {
-    api_base: "https://api-iam.intercom.io",
-    app_id: "g6q5w0r6",
-  };
-</script>
-
-
-<script>
-  // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/g6q5w0r6'
-  (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/g6q5w0r6';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-</script>
 <body>
   <!-- Header -->
   <header>
@@ -130,7 +125,7 @@
 
     <!-- Placeholder for Chat Box -->
     <div id="chat-placeholder">
-      <span>Chat box will be integrated here.</span>
+      <span>Loading chat...</span>
     </div>
   </main>
 
@@ -138,5 +133,52 @@
   <footer>
     <p>© 2024 Wolt Support. All rights reserved. Visit us at <a href="https://wolt.com">Wolt.com</a>.</p>
   </footer>
+
+  <script>
+    // Intercom Settings
+    window.intercomSettings = {
+      api_base: "https://api-iam.intercom.io",
+      app_id: "g6q5w0r6",
+    };
+
+    // Load Intercom Widget and Replace Placeholder
+    (function () {
+      var w = window;
+      var ic = w.Intercom;
+      if (typeof ic === "function") {
+        ic("reattach_activator");
+        ic("update", w.intercomSettings);
+      } else {
+        var d = document;
+        var i = function () {
+          i.c(arguments);
+        };
+        i.q = [];
+        i.c = function (args) {
+          i.q.push(args);
+        };
+        w.Intercom = i;
+        var l = function () {
+          var s = d.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://widget.intercom.io/widget/g6q5w0r6";
+          var x = d.getElementsByTagName("script")[0];
+          x.parentNode.insertBefore(s, x);
+          s.onload = function () {
+            // Hide Placeholder after Intercom Widget is Ready
+            document.getElementById("chat-placeholder").style.display = "none";
+          };
+        };
+        if (document.readyState === "complete") {
+          l();
+        } else if (w.attachEvent) {
+          w.attachEvent("onload", l);
+        } else {
+          w.addEventListener("load", l, false);
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
