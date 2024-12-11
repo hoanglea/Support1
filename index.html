@@ -18,13 +18,33 @@
     header {
       background-color: #00aaff; /* Wolt blue */
       color: white;
-      padding: 20px;
+      padding: 20px 0;
       text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
     }
 
     header img {
-      max-width: 150px;
+      max-width: 180px;
       margin-bottom: 10px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     /* Hero Section */
@@ -33,17 +53,23 @@
       background-size: cover;
       text-align: center;
       color: white;
-      padding: 100px 20px;
+      padding: 120px 20px;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .hero h1 {
-      font-size: 3em;
+      font-size: 4em;
       margin: 0;
     }
 
     .hero p {
       font-size: 1.5em;
       margin: 20px 0;
+      max-width: 600px;
     }
 
     .cta-button {
@@ -51,36 +77,77 @@
       color: white;
       padding: 15px 30px;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.3em;
       border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
 
-    /* Content Section */
-    .content {
-      padding: 40px 20px;
+    .cta-button:hover {
+      background-color: #0077cc;
+    }
+
+    /* Services Section */
+    .services {
+      display: flex;
+      justify-content: space-around;
+      padding: 80px 20px;
+      background-color: #f5f5f5;
+    }
+
+    .service-item {
       text-align: center;
+      width: 30%;
     }
 
-    .content h2 {
-      font-size: 2em;
+    .service-item img {
+      width: 80%;
       margin-bottom: 20px;
     }
 
-    .content p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
+    .service-item h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .service-item p {
+      font-size: 1.1em;
     }
 
     /* Footer */
     footer {
       background-color: #f1f1f1;
       text-align: center;
-      padding: 20px 0;
+      padding: 40px 20px;
     }
 
     footer a {
-      text-decoration: none;
       color: #00aaff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1.2em;
+      }
+
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .service-item {
+        width: 80%;
+        margin-bottom: 30px;
+      }
     }
   </style>
 </head>
@@ -90,23 +157,36 @@
   <header>
     <img src="https://raw.githubusercontent.com/Report0101/Support1/main/Woltlogo.jpg" alt="Wolt Logo">
     <nav>
-      <a href="#home" style="margin-right: 20px; color: white;">Home</a>
-      <a href="#services" style="margin-right: 20px; color: white;">Services</a>
-      <a href="#contact" style="color: white;">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <div class="hero">
     <h1>Welcome to Wolt</h1>
-    <p>Delivering food, groceries, and more to your doorsteps</p>
+    <p>Delivering food, groceries, and more to your doorsteps. Fast and convenient, all from your favorite local stores.</p>
     <a href="#cta" class="cta-button">Get Started</a>
   </div>
 
-  <!-- Content Section -->
-  <div class="content" id="services">
-    <h2>Our Services</h2>
-    <p>We offer fast and reliable delivery for food, groceries, and more from your favorite local stores.</p>
+  <!-- Services Section -->
+  <div class="services" id="services">
+    <div class="service-item">
+      <img src="https://cdn.wolt.com/images/offer_types/delivery.svg" alt="Delivery">
+      <h3>Fast Delivery</h3>
+      <p>Get your orders delivered to you in minutes from local shops and restaurants.</p>
+    </div>
+    <div class="service-item">
+      <img src="https://cdn.wolt.com/images/offer_types/groceries.svg" alt="Groceries">
+      <h3>Grocery Shopping</h3>
+      <p>Order groceries and essentials from your favorite stores and have them delivered quickly.</p>
+    </div>
+    <div class="service-item">
+      <img src="https://cdn.wolt.com/images/offer_types/dining.svg" alt="Dining">
+      <h3>Dining Out</h3>
+      <p>Browse the best restaurants in town, order food, and enjoy it at home.</p>
+    </div>
   </div>
 
   <!-- Footer -->
