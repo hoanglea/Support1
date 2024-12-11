@@ -1,41 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Wolt Delivery: Food and more | Hungary</title>
-    <link href="https://wolt-com-static-assets.wolt.com/" rel="preconnect" crossorigin="anonymous"/>
-    <link href="https://consumer-static-assets.wolt.com" rel="preconnect" crossorigin="anonymous"/>
-    <link href="https://imageproxy.wolt.com" rel="preconnect" crossorigin="anonymous"/>
-    <link href="https://restaurant-api.wolt.com" rel="preconnect" crossorigin="anonymous"/>
-    <style>
-      /* Add your custom CSS here */
-      body { font-family: Arial, sans-serif; }
-      .header { background-color: #000; color: #fff; padding: 10px 20px; }
-      .logo { max-width: 150px; }
-      .footer { background-color: #f5f5f5; padding: 20px; }
-    </style>
-    <script type="text/javascript">
-      // JavaScript to manage theme, intercom, and appsFlyer
-    </script>
-  </head>
-  <body>
-    <div class="header">
-      <img class="logo" src="https://yourdomain.com/path/to/Woltlogo.jpg" alt="Wolt Logo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wolt</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background-color: #00aaff;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+    }
+
+    header img {
+      width: 150px;
+      vertical-align: middle;
+    }
+
+    header nav {
+      margin-top: 10px;
+    }
+
+    header nav a {
+      color: white;
+      font-size: 1.2em;
+      margin: 0 20px;
+      text-decoration: none;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://cdn.wolt.com/frontpage/wolt-banner.jpg') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    /* Main Features */
+    .features {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 50px 0;
+      padding: 0 20px;
+    }
+
+    .feature {
+      text-align: center;
+      width: 30%;
+    }
+
+    .feature img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .feature p {
+      color: #666;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f4f4f4;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .feature {
+        width: 80%;
+        margin-bottom: 30px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="https://wolt.com/favicon.ico" alt="Wolt Logo">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1>Welcome to Wolt</h1>
+      <p>Get your food delivered fast, fresh, and hot with Wolt.</p>
     </div>
-    
-    <main>
-      <h1>Welcome to Wolt!</h1>
-      <p>Order food and groceries with Wolt!</p>
-      <!-- Add more content similar to the Wolt homepage -->
-    </main>
-    
-    <footer class="footer">
-      <p>&copy; 2024 Wolt, All rights reserved.</p>
-    </footer>
-    
-    <script>
-      // Insert Intercom or other widgets
-    </script>
-  </body>
+  </section>
+
+  <!-- Main Features -->
+  <section class="features">
+    <div class="feature">
+      <img src="https://cdn.wolt.com/icons/feature-food.svg" alt="Food">
+      <h3>Food Delivery</h3>
+      <p>Order your favorite meals from local restaurants.</p>
+    </div>
+    <div class="feature">
+      <img src="https://cdn.wolt.com/icons/feature-grocery.svg" alt="Grocery">
+      <h3>Grocery Shopping</h3>
+      <p>Get groceries delivered from nearby stores.</p>
+    </div>
+    <div class="feature">
+      <img src="https://cdn.wolt.com/icons/feature-courier.svg" alt="Courier">
+      <h3>Courier Services</h3>
+      <p>Send packages quickly across town with our courier service.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Wolt. All rights reserved.</p>
+    <p>Visit our website at <a href="https://wolt.com">wolt.com</a></p>
+  </footer>
+
+</body>
 </html>
