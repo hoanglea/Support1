@@ -3,182 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wolt Support</title>
+  <title>Wolt</title>
   <style>
     /* General Styles */
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f3f4f6; /* Light background */
+      background-color: #f9f9f9;
       color: #333;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
     }
 
     /* Header */
     header {
-      background: #00aaff; /* Wolt blue */
+      background-color: #00aaff; /* Wolt blue */
       color: white;
       padding: 20px;
       text-align: center;
-      font-size: 1.8em;
-      font-weight: bold;
     }
 
     header img {
-      max-height: 50px;
-      vertical-align: middle;
-      margin-right: 10px;
+      max-width: 150px;
+      margin-bottom: 10px;
     }
 
-    /* Main Section */
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    .content {
+    /* Hero Section */
+    .hero {
+      background: url('https://cdn.wolt.com/frontpage/wolt-banner.jpg') no-repeat center center;
+      background-size: cover;
       text-align: center;
-      padding: 20px;
+      color: white;
+      padding: 100px 20px;
     }
 
-    .content img {
-      max-width: 300px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+    .hero h1 {
+      font-size: 3em;
+      margin: 0;
     }
 
-    .content h1 {
+    .hero p {
+      font-size: 1.5em;
+      margin: 20px 0;
+    }
+
+    .cta-button {
+      background-color: #00aaff;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1.2em;
+      border-radius: 5px;
+    }
+
+    /* Content Section */
+    .content {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .content h2 {
       font-size: 2em;
-      color: #00aaff;
+      margin-bottom: 20px;
     }
 
     .content p {
       font-size: 1.2em;
-      color: #555;
-      margin: 10px 0 20px;
-    }
-
-    /* Placeholder for Chat Box */
-    #chat-placeholder {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      width: 400px;
-      height: 600px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #aaa;
-      border: 2px dashed #ddd;
-      position: relative;
-      overflow: hidden;
-    }
-
-    iframe.intercom-messenger-frame,
-    iframe.intercom-launcher-frame {
-      position: absolute !important;
-      top: 0;
-      left: 0;
-      width: 100% !important;
-      height: 100% !important;
+      margin-bottom: 20px;
     }
 
     /* Footer */
     footer {
+      background-color: #f1f1f1;
       text-align: center;
-      padding: 10px 0;
-      background: #f8f9fa;
-      font-size: 0.9em;
+      padding: 20px 0;
     }
 
     footer a {
-      color: #00aaff;
       text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+      color: #00aaff;
     }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header>
-    <img src="https://github.com/Report0101/Support1/blob/main/Woltlogo.jpg?raw=true" alt="Wolt Logo">
-    Wolt Support
+    <img src="https://raw.githubusercontent.com/Report0101/Support1/main/Woltlogo.jpg" alt="Wolt Logo">
+    <nav>
+      <a href="#home" style="margin-right: 20px; color: white;">Home</a>
+      <a href="#services" style="margin-right: 20px; color: white;">Services</a>
+      <a href="#contact" style="color: white;">Contact</a>
+    </nav>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <div class="content">
-      <img src="https://cdn.wolt.com/frontpage/logo-blue.svg" alt="Wolt Service">
-      <h1>Welcome to Wolt Support</h1>
-      <p>Your friendly assistant for any queries or issues. Let’s chat!</p>
-    </div>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Welcome to Wolt</h1>
+    <p>Delivering food, groceries, and more to your doorsteps</p>
+    <a href="#cta" class="cta-button">Get Started</a>
+  </div>
 
-    <!-- Placeholder for Chat Box -->
-    <div id="chat-placeholder">
-      <span>Loading chat...</span>
-    </div>
-  </main>
+  <!-- Content Section -->
+  <div class="content" id="services">
+    <h2>Our Services</h2>
+    <p>We offer fast and reliable delivery for food, groceries, and more from your favorite local stores.</p>
+  </div>
 
   <!-- Footer -->
   <footer>
-    <p>© 2024 Wolt Support. All rights reserved. Visit us at <a href="https://wolt.com">Wolt.com</a>.</p>
+    <p>&copy; 2024 Wolt. All rights reserved. <br>
+    <a href="https://wolt.com/en/hun">Visit our main site</a></p>
   </footer>
 
-  <script>
-    // Intercom Settings
-    window.intercomSettings = {
-      api_base: "https://api-iam.intercom.io",
-      app_id: "g6q5w0r6",
-    };
-
-    // Load Intercom Widget and Replace Placeholder
-    (function () {
-      var w = window;
-      var ic = w.Intercom;
-      if (typeof ic === "function") {
-        ic("reattach_activator");
-        ic("update", w.intercomSettings);
-      } else {
-        var d = document;
-        var i = function () {
-          i.c(arguments);
-        };
-        i.q = [];
-        i.c = function (args) {
-          i.q.push(args);
-        };
-        w.Intercom = i;
-        var l = function () {
-          var s = d.createElement("script");
-          s.type = "text/javascript";
-          s.async = true;
-          s.src = "https://widget.intercom.io/widget/g6q5w0r6";
-          var x = d.getElementsByTagName("script")[0];
-          x.parentNode.insertBefore(s, x);
-          s.onload = function () {
-            // Hide Placeholder after Intercom Widget is Ready
-            document.getElementById("chat-placeholder").style.display = "none";
-          };
-        };
-        if (document.readyState === "complete") {
-          l();
-        } else if (w.attachEvent) {
-          w.attachEvent("onload", l);
-        } else {
-          w.addEventListener("load", l, false);
-        }
-      }
-    })();
-  </script>
 </body>
 </html>
