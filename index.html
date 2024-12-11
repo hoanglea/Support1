@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wolt Support Chat</title>
+  <title>Wolt Support</title>
   <style>
     /* General Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f3f4f6;
+      background-color: #f3f4f6; /* Light background */
       color: #333;
       display: flex;
       flex-direction: column;
@@ -19,141 +19,112 @@
 
     /* Header */
     header {
-      background: #0078d7;
+      background: #00aaff; /* Wolt blue */
       color: white;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
-      font-size: 1.5em;
+      font-size: 1.8em;
+      font-weight: bold;
     }
 
-    /* Chat Box Container */
+    header img {
+      max-height: 50px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    /* Main Section */
     main {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
 
-    #chat-container {
+    .content {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .content img {
+      max-width: 300px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .content h1 {
+      font-size: 2em;
+      color: #00aaff;
+    }
+
+    .content p {
+      font-size: 1.2em;
+      color: #555;
+      margin: 10px 0 20px;
+    }
+
+    /* Placeholder for Chat Box */
+    #chat-placeholder {
       background: white;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       width: 400px;
       height: 600px;
       display: flex;
-      flex-direction: column;
-      padding: 20px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #aaa;
+      border: 2px dashed #ddd;
     }
 
-    #chat-box {
-      flex: 1;
-      overflow-y: auto;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-
-    #chat-input {
-      display: flex;
-    }
-
-    #chat-input input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-
-    #chat-input button {
-      background: #0078d7;
-      color: white;
-      border: none;
-      padding: 10px;
-      margin-left: 5px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    #chat-input button:hover {
-      background: #005bb5;
+    #chat-placeholder span {
+      color: #888;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 10px;
+      padding: 10px 0;
       background: #f8f9fa;
       font-size: 0.9em;
+    }
+
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    Wolt Support Chat
+    <img src="https://wolt.com/favicon.ico" alt="Wolt Logo">
+    Wolt Support
   </header>
 
-  <!-- Main Chat Section -->
+  <!-- Main Content -->
   <main>
-    <div id="chat-container">
-      <div id="chat-box">
-        <!-- Chat messages will appear here -->
-      </div>
-      <div id="chat-input">
-        <input type="text" id="message-input" placeholder="Type your message...">
-        <button id="send-btn">Send</button>
-      </div>
+    <div class="content">
+      <img src="https://cdn.wolt.com/frontpage/logo-blue.svg" alt="Wolt Service">
+      <h1>Welcome to Wolt Support</h1>
+      <p>Your friendly assistant for any queries or issues. Let’s chat!</p>
+    </div>
+
+    <!-- Placeholder for Chat Box -->
+    <div id="chat-placeholder">
+      <span>Chat box will be integrated here.</span>
     </div>
   </main>
 
   <!-- Footer -->
   <footer>
-    © 2024 Wolt Support. All rights reserved.
+    <p>© 2024 Wolt Support. All rights reserved. Visit us at <a href="https://wolt.com">Wolt.com</a>.</p>
   </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // JavaScript to handle chat functionality
-    const chatBox = document.getElementById('chat-box');
-    const messageInput = document.getElementById('message-input');
-    const sendBtn = document.getElementById('send-btn');
-
-    // Simulate sending and displaying messages
-    sendBtn.addEventListener('click', () => {
-      const message = messageInput.value.trim();
-      if (message) {
-        // Add user's message
-        const userMessage = document.createElement('div');
-        userMessage.style.margin = '10px 0';
-        userMessage.style.padding = '10px';
-        userMessage.style.background = '#0078d7';
-        userMessage.style.color = 'white';
-        userMessage.style.borderRadius = '8px';
-        userMessage.style.textAlign = 'right';
-        userMessage.textContent = message;
-        chatBox.appendChild(userMessage);
-
-        // Clear input field
-        messageInput.value = '';
-
-        // Simulate a support response
-        setTimeout(() => {
-          const supportMessage = document.createElement('div');
-          supportMessage.style.margin = '10px 0';
-          supportMessage.style.padding = '10px';
-          supportMessage.style.background = '#f1f1f1';
-          supportMessage.style.color = '#333';
-          supportMessage.style.borderRadius = '8px';
-          supportMessage.style.textAlign = 'left';
-          supportMessage.textContent = 'Thank you for reaching out! How can we assist you?';
-          chatBox.appendChild(supportMessage);
-
-          // Scroll to the latest message
-          chatBox.scrollTop = chatBox.scrollHeight;
-        }, 1000);
-      }
-    });
-  </script>
 </body>
 </html>
