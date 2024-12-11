@@ -7,117 +7,104 @@
   <style>
     /* General Styles */
     body {
-      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f8f8;
       color: #333;
     }
 
     /* Header */
     header {
-      background-color: #00aaff; /* Wolt blue */
+      background-color: #00aaff;
       color: white;
-      padding: 20px 0;
+      padding: 15px 0;
       text-align: center;
       position: fixed;
-      width: 100%;
       top: 0;
       left: 0;
-      z-index: 1000;
+      width: 100%;
+      z-index: 100;
     }
 
     header img {
-      max-width: 180px;
-      margin-bottom: 10px;
+      width: 150px;
+      vertical-align: middle;
     }
 
-    nav {
+    header nav {
       margin-top: 10px;
     }
 
-    nav a {
+    header nav a {
       color: white;
-      margin: 0 15px;
+      font-size: 1.2em;
+      margin: 0 20px;
       text-decoration: none;
-      font-size: 1.1em;
     }
 
-    nav a:hover {
+    header nav a:hover {
       text-decoration: underline;
     }
 
     /* Hero Section */
     .hero {
-      background: url('https://cdn.wolt.com/frontpage/wolt-banner.jpg') no-repeat center center;
-      background-size: cover;
-      text-align: center;
-      color: white;
-      padding: 120px 20px;
-      height: 100vh;
+      background: url('https://cdn.wolt.com/frontpage/wolt-banner.jpg') center/cover no-repeat;
+      height: 80vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      color: white;
+      text-align: center;
     }
 
     .hero h1 {
-      font-size: 4em;
-      margin: 0;
+      font-size: 3em;
+      font-weight: 600;
     }
 
     .hero p {
-      font-size: 1.5em;
-      margin: 20px 0;
-      max-width: 600px;
+      font-size: 1.2em;
     }
 
-    .cta-button {
-      background-color: #00aaff;
-      color: white;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-size: 1.3em;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta-button:hover {
-      background-color: #0077cc;
-    }
-
-    /* Services Section */
-    .services {
+    /* Main Features */
+    .features {
       display: flex;
-      justify-content: space-around;
-      padding: 80px 20px;
-      background-color: #f5f5f5;
+      justify-content: space-evenly;
+      margin: 50px 0;
+      padding: 0 20px;
     }
 
-    .service-item {
+    .feature {
       text-align: center;
       width: 30%;
     }
 
-    .service-item img {
-      width: 80%;
+    .feature img {
+      width: 80px;
       margin-bottom: 20px;
     }
 
-    .service-item h3 {
+    .feature h3 {
       font-size: 1.5em;
-      margin-bottom: 10px;
+      color: #333;
     }
 
-    .service-item p {
-      font-size: 1.1em;
+    .feature p {
+      color: #666;
     }
 
     /* Footer */
     footer {
-      background-color: #f1f1f1;
+      background-color: #f4f4f4;
+      padding: 20px 0;
       text-align: center;
-      padding: 40px 20px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9em;
+      color: #777;
     }
 
     footer a {
@@ -129,24 +116,24 @@
       text-decoration: underline;
     }
 
-    /* Mobile Responsive */
+    /* Mobile responsiveness */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5em;
-      }
-
-      .hero p {
-        font-size: 1.2em;
-      }
-
-      .services {
+      .features {
         flex-direction: column;
         align-items: center;
       }
 
-      .service-item {
+      .feature {
         width: 80%;
         margin-bottom: 30px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
       }
     }
   </style>
@@ -155,44 +142,46 @@
 
   <!-- Header -->
   <header>
-    <img src="https://raw.githubusercontent.com/Report0101/Support1/main/Woltlogo.jpg" alt="Wolt Logo">
+    <img src="https://wolt.com/favicon.ico" alt="Wolt Logo">
     <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+      <a href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <div class="hero">
-    <h1>Welcome to Wolt</h1>
-    <p>Delivering food, groceries, and more to your doorsteps. Fast and convenient, all from your favorite local stores.</p>
-    <a href="#cta" class="cta-button">Get Started</a>
-  </div>
+  <section class="hero">
+    <div>
+      <h1>Welcome to Wolt</h1>
+      <p>Get your food delivered fast, fresh, and hot with Wolt.</p>
+    </div>
+  </section>
 
-  <!-- Services Section -->
-  <div class="services" id="services">
-    <div class="service-item">
-      <img src="https://cdn.wolt.com/images/offer_types/delivery.svg" alt="Delivery">
-      <h3>Fast Delivery</h3>
-      <p>Get your orders delivered to you in minutes from local shops and restaurants.</p>
+  <!-- Main Features -->
+  <section class="features">
+    <div class="feature">
+      <img src="https://cdn.wolt.com/icons/feature-food.svg" alt="Food">
+      <h3>Food Delivery</h3>
+      <p>Order your favorite meals from local restaurants.</p>
     </div>
-    <div class="service-item">
-      <img src="https://cdn.wolt.com/images/offer_types/groceries.svg" alt="Groceries">
+    <div class="feature">
+      <img src="https://cdn.wolt.com/icons/feature-grocery.svg" alt="Grocery">
       <h3>Grocery Shopping</h3>
-      <p>Order groceries and essentials from your favorite stores and have them delivered quickly.</p>
+      <p>Get groceries delivered from nearby stores.</p>
     </div>
-    <div class="service-item">
-      <img src="https://cdn.wolt.com/images/offer_types/dining.svg" alt="Dining">
-      <h3>Dining Out</h3>
-      <p>Browse the best restaurants in town, order food, and enjoy it at home.</p>
+    <div class="feature">
+      <img src="https://cdn.wolt.com/icons/feature-courier.svg" alt="Courier">
+      <h3>Courier Services</h3>
+      <p>Send packages quickly across town with our courier service.</p>
     </div>
-  </div>
+  </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Wolt. All rights reserved. <br>
-    <a href="https://wolt.com/en/hun">Visit our main site</a></p>
+    <p>&copy; 2024 Wolt. All rights reserved.</p>
+    <p>Visit our website at <a href="https://wolt.com">wolt.com</a></p>
   </footer>
 
 </body>
