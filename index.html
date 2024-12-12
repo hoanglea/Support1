@@ -27,9 +27,29 @@
       z-index: 100;
     }
 
-    header img {
-      width: 150px;
-      vertical-align: middle;
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-logo img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .header-support {
+      font-family: "Lucida Handwriting", cursive;
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
     header nav {
@@ -45,13 +65,6 @@
 
     header nav a:hover {
       text-decoration: underline;
-    }
-
-    .header-support {
-      font-family: "Lucida Handwriting", cursive;
-      font-size: 30px;
-      font-weight: bold;
-      margin-top: 10px;
     }
 
     /* Hero Section */
@@ -154,7 +167,18 @@
 
   <!-- Header -->
   <header>
-    <div class="header-support">Wolt Support</div>
+    <div class="header-container">
+      <div class="header-logo">
+        <img src="https://github.com/Report0101/Support1/blob/main/support-customer-care-icon-elegant-cyan-blue-round-button-support-customer-care-icon-isolated-elegant-cyan-blue-round-button-99714974.jpg?raw=true" alt="Support Icon">
+        <div class="header-support">Wolt Support</div>
+      </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -164,8 +188,7 @@
       <p>Get your answers delivered fast, fresh, and smart with Wolt Support.</p>
     </div>
   </section>
-
-  <!-- Main Features -->
+   <script>/*<!-- Main Features -->
   <section class="features">
     <div class="feature">
       <img src="https://cdn.wolt.com/icons/feature-food.svg" alt="Food">
@@ -183,11 +206,23 @@
       <p>Send packages quickly across town with our courier service.</p>
     </div>
   </section>
+  */</script>
 
   <!-- Footer -->
   <footer>
     <p>Visit our website at <a href="https://wolt.com">wolt.com</a></p>
   </footer>
+<script>
+  window.intercomSettings = {
+    api_base: "https://api-iam.intercom.io",
+    app_id: "g6q5w0r6",
+  };
+</script>
 
+
+<script>
+  // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/g6q5w0r6'
+  (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/g6q5w0r6';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+</script>
 </body>
 </html>
